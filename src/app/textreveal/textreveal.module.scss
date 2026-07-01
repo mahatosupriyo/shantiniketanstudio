@@ -1,0 +1,42 @@
+@import '../variables.scss';
+
+.container {
+    padding: 0rem 0rem;
+    color: #000;
+    display: flex;
+
+    z-index: 999;
+    height: 100%;
+    padding: 10rem 2rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2.6rem;
+    height: 100%;
+}
+
+.mission {
+    line-height: 340%;
+    width: 100%;
+    max-width: 30rem;
+
+    .word {
+        font-size: 4.4rem;
+        color: hsla(0, 0%, 100%, 0.3);
+        transition: color 0.3s ease;
+        font-family: $font-heading;
+        font-weight: 500;
+
+        @media only screen and (max-width: 60rem) {
+            font-size: 3.8rem;
+        }
+    }
+}
+
+// .subhead {
+//     font-family: $font-heading;
+// }
