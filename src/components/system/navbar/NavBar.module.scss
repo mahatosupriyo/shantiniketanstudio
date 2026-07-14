@@ -1,0 +1,67 @@
+@import '../../../app/variables.scss';
+
+.navbar {
+    padding: 2rem 2rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    position: fixed;
+    top: 0;
+    mix-blend-mode: difference;
+    z-index: 999999;
+    transition: 0.4s ease-in-out;
+
+    .toplayer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .element {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.6rem 0rem;
+            line-height: 100%;
+
+            position: relative;
+            display: flex;
+            overflow: hidden;
+
+            color: #fff;
+
+            font-family: $font-body;
+
+            &:nth-child(2) {
+                justify-self: end;
+                text-align: right;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 0.16rem;
+                    background-color: #fff;
+                    transform: translateX(-101%);
+                    transition: all 0.4s cubic-bezier(1, 0, 0, 1);
+                }
+
+                &:hover {
+                    &:after {
+                        transform: translateX(0%);
+                    }
+                }
+            }
+
+            &:last-child {
+                justify-self: end;
+                text-align: right;
+            }
+        }
+    }
+}

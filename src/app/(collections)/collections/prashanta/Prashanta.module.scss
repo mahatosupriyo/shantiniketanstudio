@@ -1,0 +1,189 @@
+@import '../../../variables.scss';
+
+/* ------------------------------------------------------------------
+   Prashanta — cinematic scroll hero
+   Every act is absolutely centered inside the pinned stage; GSAP
+   owns opacity/transform, SCSS owns layout, type & responsiveness.
+------------------------------------------------------------------- */
+
+$ease-cinema: cubic-bezier(0.65, 0, 0.35, 1);
+$ink: #0d0d0d;
+$paper: #ffffff;
+$muted: rgba(13, 13, 13, 0.16);
+
+.root {
+    background: $paper;
+    color: $ink;
+}
+
+/* ---------------------------- stage ----------------------------- */
+.stage {
+    position: relative;
+    min-height: 100dvh;
+    height: 100%;
+    width: 100dvw;
+    /* mobile URL-bar safe */
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+
+    /* every act stacks on the exact same center */
+    >* {
+        grid-area: 1 / 1;
+        max-width: 100vw;
+    }
+}
+
+/* --------------------------- ACT 1 — intro ----------------------- */
+.intro {
+    max-width: 16ch;
+    margin: 0;
+    padding-inline: clamp(1rem, 4vw, 3rem);
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.2rem;
+    line-height: 1.02;
+    font-size: clamp(2.6rem, 9.5vw, 9.75rem);
+    will-change: transform, opacity;
+}
+
+.introWord {
+    display: inline-block;
+    margin-inline: 0.14em;
+    opacity: 0.16;
+    /* pre-JS state matches GSAP initial — no flash */
+    transition: opacity 0.6s $ease-cinema;
+    will-change: opacity;
+    font-family: $font-heading;
+}
+
+/* ------------------------ ACT 2 — wordmark ----------------------- */
+.prashanta {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    will-change: transform, opacity, filter;
+
+    /* Force the Lottie and Fallback to stack perfectly on the exact same center */
+    >* {
+        grid-area: 1 / 1;
+    }
+}
+
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Share styles between both containers */
+.prashantaLottie,
+.prashantaFallback {
+    width: min(22rem, 90vw);
+    display: grid;
+    place-items: center;
+
+    /* Force any dynamically injected SVGs to scale down gracefully on mobile */
+    :global(svg) {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto !important;
+    }
+}
+
+.prashantaLottie {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------------- ACT 3 — video ------------------------ */
+.videoWrap {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 320px;
+    /* Base desktop size */
+    aspect-ratio: 1;
+    will-change: transform, opacity;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 999;
+    /* Clips the video into a perfect circle */
+    border-radius: 50%;
+}
+
+/* -------------------------- STATIC — quote ----------------------- */
+.quote {
+    max-width: 44ch;
+    margin: 0;
+    padding-inline: clamp(1rem, 4vw, 3rem);
+    text-align: center;
+    font-weight: 700;
+    font-family: $font-heading;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    font-size: clamp(1rem, 2.2vw, 2.4rem);
+}
+
+/* --------------------------- afterwards -------------------------- */
+.after {
+    position: relative;
+    background: $paper;
+}
+
+/* ------------------------- responsiveness ------------------------ */
+@media (max-width: 768px) {
+    .intro {
+        max-width: 12ch;
+        line-height: 1.06;
+        margin-inline: auto;
+    }
+
+    .videoWrap {
+        width: min(88vw, 240px);
+    }
+
+    .quote {
+        max-width: 30ch;
+        margin-inline: auto;
+    }
+}
+
+/* ------------------------ reduced motion ------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .stage {
+        height: auto;
+        min-height: 100dvh;
+        grid-auto-rows: auto;
+        row-gap: 1rem;
+        width: 100dvw;
+        padding-block: 1rem;
+
+        >* {
+            grid-area: auto;
+            /* unstack — show acts as a static column */
+        }
+    }
+
+    .introWord {
+        opacity: 1;
+        transition: none;
+    }
+
+    .prashantaMark :global(path) {
+        opacity: 1 !important;
+        stroke-dashoffset: 0 !important;
+        fill-opacity: 1 !important;
+    }
+}

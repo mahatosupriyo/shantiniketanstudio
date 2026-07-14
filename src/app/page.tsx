@@ -6,6 +6,7 @@ import styles from './home.module.scss';
 import Preloader from './Preloader';
 import ImageTrail from './imagetrail/ImageTrail';
 import TextHighlightScroll from './textreveal/TextReveal';
+import NavBar from '@/components/system/navbar/NavBar';
 
 export default function Home() {
   const [markLanded, setMarkLanded] = useState(false);
@@ -15,18 +16,7 @@ export default function Home() {
     <div className={styles.wraper}>
       <div className={styles.hero}>
         <nav className={styles.navbar}>
-          <div
-            className={styles.toplayer}
-            style={{ opacity: markLanded ? 1 : 0, transition: 'opacity 0.6s ease 0.15s' }}
-          >
-            <p className={styles.element}>Shantiniketan studio</p>
-            <Link className={styles.element} href="/">
-              Studio Life
-            </Link>
-            <Link className={styles.element} href="/">
-              Enroll today
-            </Link>
-          </div>
+          <NavBar />
 
           <svg className={styles.logo} viewBox="0 0 2785 507" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* the O — landed into place by the preloader */}
