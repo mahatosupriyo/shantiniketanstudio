@@ -175,7 +175,7 @@ export default function Prashanta() {
                     scrollTrigger: {
                         trigger: stage,
                         start: 'top top',
-                        end: mobile ? '+=2000' : '+=4000',
+                        end: mobile ? '+=2600' : '+=4000',
                         pin: true,
                         scrub: mobile ? 0.6 : 1,
                         anticipatePin: 1,
