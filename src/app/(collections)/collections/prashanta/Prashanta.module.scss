@@ -127,10 +127,19 @@ $muted: rgba(13, 13, 13, 0.16);
 }
 
 /* -------------------------- STATIC — quote ----------------------- */
+
+.quotesection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
 .quote {
-    max-width: 44ch;
+    max-width: 44rem;
     margin: 0;
-    padding-inline: clamp(1rem, 4vw, 3rem);
+    // padding-inline: clamp(1rem, 4vw, 3rem);
     text-align: center;
     font-weight: 700;
     font-family: $font-heading;
@@ -139,10 +148,27 @@ $muted: rgba(13, 13, 13, 0.16);
     font-size: 2.6rem;
 }
 
+.by{
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: $font-body;
+}
+
 /* --------------------------- afterwards -------------------------- */
 .after {
     position: relative;
     background: $paper;
+    padding-bottom: 10rem;
+}
+
+
+.lineargallery{
+    display: flex;
+    margin: 2rem;
+    flex-direction: column;
+    gap: 0;
+    // border-radius: 2rem;
+    overflow: hidden;
 }
 
 /* ------------------------- responsiveness ------------------------ */
