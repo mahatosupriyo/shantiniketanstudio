@@ -167,6 +167,10 @@ $muted: rgba(13, 13, 13, 0.16);
     margin: 2rem;
     flex-direction: column;
     gap: 0;
+
+    @media (max-width: 768px){
+        margin: 0rem;
+    }
     // border-radius: 2rem;
     overflow: hidden;
 }
