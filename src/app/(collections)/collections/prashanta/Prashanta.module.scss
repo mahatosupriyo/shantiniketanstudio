@@ -41,7 +41,7 @@ $muted: rgba(13, 13, 13, 0.16);
     padding-inline: clamp(1rem, 4vw, 3rem);
     text-align: center;
     font-weight: 700;
-    letter-spacing: -0.2rem;
+    // letter-spacing: -0.2rem;
     line-height: 1.02;
     font-size: clamp(2.6rem, 9.5vw, 9.75rem);
     will-change: transform, opacity;
@@ -85,7 +85,7 @@ $muted: rgba(13, 13, 13, 0.16);
 /* Share styles between both containers */
 .prashantaLottie,
 .prashantaFallback {
-    width: min(22rem, 90vw);
+    width: min(28rem, 90vw);
     display: grid;
     place-items: center;
 

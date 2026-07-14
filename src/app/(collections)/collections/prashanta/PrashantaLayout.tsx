@@ -147,10 +147,11 @@ export default function Prashanta({ wordmarkSvg }: { wordmarkSvg: string }) {
                     scrollTrigger: {
                         trigger: stage,
                         start: 'top top',
-                        // Distance tightened up since manual rings were removed
-                        end: mobile ? '+=2500' : '+=4000',
+                        // FIX: Give mobile the same long scroll distance as desktop
+                        end: '+=4000',
                         pin: true,
-                        scrub: mobile ? 0.6 : 1,
+                        // FIX: Add a tiny bit more smoothing to the scrub on mobile
+                        scrub: mobile ? 0.8 : 1,
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
                     },
