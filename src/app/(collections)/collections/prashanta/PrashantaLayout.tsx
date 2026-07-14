@@ -148,7 +148,8 @@ export default function Prashanta({ wordmarkSvg }: { wordmarkSvg: string }) {
                     scrollTrigger: {
                         trigger: stage,
                         start: 'top top',
-                        end: '+=4000',
+                        // end: '+=4000',
+                        end: mobile ? '+=1200' : '+=4000',
                         pin: true,
                         scrub: mobile ? 0.6 : 1,
                         anticipatePin: 1,
