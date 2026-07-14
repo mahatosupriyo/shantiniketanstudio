@@ -133,7 +133,8 @@ export default function Prashanta({ wordmarkSvg }: { wordmarkSvg: string }) {
                 let targetTime = 0
 
                 const applyTime = () => {
-                    if (!video.duration) return
+                    // FIX 1: If we are on mobile, skip the manual scrubbing completely!
+                    if (mobile || !video.duration) return
                     const current = video.currentTime
                     const next = current + (targetTime - current) * 0.18
                     if (Math.abs(next - current) > 0.001) video.currentTime = next
@@ -147,11 +148,9 @@ export default function Prashanta({ wordmarkSvg }: { wordmarkSvg: string }) {
                     scrollTrigger: {
                         trigger: stage,
                         start: 'top top',
-                        // FIX: Give mobile the same long scroll distance as desktop
                         end: '+=4000',
                         pin: true,
-                        // FIX: Add a tiny bit more smoothing to the scrub on mobile
-                        scrub: mobile ? 0.8 : 1,
+                        scrub: mobile ? 0.6 : 1,
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
                     },
@@ -195,20 +194,35 @@ export default function Prashanta({ wordmarkSvg }: { wordmarkSvg: string }) {
                     )
                     .to({}, { duration: 0.2 }) // Slight hold after Lottie draws
 
-                    /* ACT 3 — Video Scrub */
-                    .to(q(`.${styles.videoWrap}`), {
-                        opacity: 1,
-                        duration: 1,
-                        ease: 'power2.inOut'
-                    })
-                    .to(proxy, {
+                /* ACT 3 — Video Appearance */
+                tl.to(q(`.${styles.videoWrap}`), {
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power2.inOut',
+                    onStart: () => {
+                        // FIX 2: When the video appears on mobile, tell it to just play naturally.
+                        if (mobile) {
+                            video.currentTime = 0;
+                            video.play().catch(() => { }); // Catches low-power mode blocking
+                        }
+                    }
+                })
+
+                /* ACT 4 — The Split (Mobile vs Desktop) */
+                if (mobile) {
+                    // On mobile, just hold the empty pin for a while so the user can watch the video play
+                    tl.to({}, { duration: 3.4 })
+                } else {
+                    // On desktop, keep the smooth scroll-scrub behavior
+                    tl.to(proxy, {
                         t: 1,
-                        duration: mobile ? 2.4 : 3.4,
+                        duration: 3.4,
                         ease: 'none',
                         onUpdate: () => {
                             if (video.duration) targetTime = proxy.t * video.duration
                         },
                     })
+                }
 
                 return () => {
                     gsap.ticker.remove(applyTime)
@@ -219,7 +233,10 @@ export default function Prashanta({ wordmarkSvg }: { wordmarkSvg: string }) {
         )
 
         video.load()
-        const onMeta = () => ScrollTrigger.refresh()
+        const onMeta = () => {
+            if (video) video.currentTime = 0.001;
+            ScrollTrigger.refresh();
+        }
         video.addEventListener('loadedmetadata', onMeta)
 
         return () => {
