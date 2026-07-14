@@ -19,7 +19,7 @@ $muted: rgba(13, 13, 13, 0.16);
 /* ---------------------------- stage ----------------------------- */
 .stage {
     position: relative;
-    min-height: 100dvh;
+    min-height: 100lvh;
     height: 100%;
     width: 100dvw;
     /* mobile URL-bar safe */
@@ -197,7 +197,7 @@ $muted: rgba(13, 13, 13, 0.16);
 @media (prefers-reduced-motion: reduce) {
     .stage {
         height: auto;
-        min-height: 100dvh;
+        min-height: 100lvh;
         grid-auto-rows: auto;
         row-gap: 1rem;
         width: 100dvw;
