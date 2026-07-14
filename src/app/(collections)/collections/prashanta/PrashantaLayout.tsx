@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger)
 type LottieAnimation = ReturnType<typeof lottie.loadAnimation>
 
 const INTRO_LINE = 'Every meal begins long before food is served'
-const QUOTE_LINE = 'all souls are equal and alike, and have the similar nature and qualities'
+const QUOTE_LINE = 'All souls are equal and alike, and have the similar nature and qualities'
 
 const MORPH_VIDEO_SRC = '/assets/prashanta/ring-to-plate.mp4'
 const MORPH_VIDEO_POSTER = '/assets/prashanta/ring-to-plate-poster.jpg'
@@ -278,7 +278,6 @@ export default function Prashanta({ wordmarkSvg }: { wordmarkSvg: string }) {
                         ref={videoRef}
                         className={styles.video}
                         src={MORPH_VIDEO_SRC}
-                        // poster={MORPH_VIDEO_POSTER}
                         muted
                         playsInline
                         preload="auto"
