@@ -97,7 +97,7 @@ export default function Preloader({
         <AnimatePresence>
             {phase !== 'done' && (
                 <motion.div
-                    style={{ zIndex: 99999 }}
+                    style={{ zIndex: 99999999 }}
                     className={styles.backdrop}
                     initial={{ opacity: 1 }}
                     animate={{ opacity: phase === 'flying' ? 0 : 1 }}

@@ -49,12 +49,11 @@ export default function Prashanta() {
             {/* Closing animated signature */}
             <section className={styles.signatureSection}>
                 <AnimatedSignature
-                    className="flex flex-col justify-center items-center w-40"
+                    className="flex flex-col justify-center items-center w-60"
                     paths={SIGNATURE_PATHS}
-                    viewBox="0 0 2680 2353"
+                    viewBox="0 0 411 125"
                     strokeColor="#000"
-                    fillColor="none"
-                    strokeWidth={40}
+                    fillColor="#000"
                     duration={1.5}
                     staggerDelay={0.4}
                 />
