@@ -1,22 +1,25 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import Link from 'next/link';
 import styles from './home.module.scss';
 import Preloader from './Preloader';
 import ImageTrail from './imagetrail/ImageTrail';
 import TextHighlightScroll from './textreveal/TextReveal';
 import NavBar from '@/components/system/navbar/NavBar';
+import AnimatedSignature from '@/components/system/animatedsignature/AnimatedSign';
+
 
 export default function Home() {
   const [markLanded, setMarkLanded] = useState(false);
   const markTargetRef = useRef<SVGGElement>(null);
+
 
   return (
     <div className={styles.wraper}>
       <div className={styles.hero}>
         <nav className={styles.navbar}>
           <NavBar />
+
 
           <svg className={styles.logo} viewBox="0 0 2785 507" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* the O — landed into place by the preloader */}
@@ -64,6 +67,7 @@ export default function Home() {
 
         </div>
       </div>
+
 
       <Preloader
         targetRef={markTargetRef}
