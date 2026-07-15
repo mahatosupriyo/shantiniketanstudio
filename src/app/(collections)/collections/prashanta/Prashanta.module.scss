@@ -1,47 +1,44 @@
 @import '../../../variables.scss';
 
-/* ------------------------------------------------------------------
-   Prashanta — cinematic scroll hero
-   Every act is absolutely centered inside the pinned stage; GSAP
-   owns opacity/transform, SCSS owns layout, type & responsiveness.
-------------------------------------------------------------------- */
+/* Prashanta — cinematic scroll experience */
+/* GSAP owns opacity + transform; SCSS owns layout, type and responsiveness */
 
 $ease-cinema: cubic-bezier(0.65, 0, 0.35, 1);
 $ink: #0d0d0d;
 $paper: #ffffff;
-$muted: rgba(13, 13, 13, 0.16);
 
 .root {
     background: $paper;
     color: $ink;
 }
 
-/* ---------------------------- stage ----------------------------- */
-.stage {
+.wordmarkSection {
+    opacity: 0;
+}
+
+/* Shared pinned panel — each act fills the viewport and centers its content */
+.introSection,
+.wordmarkSection,
+.videoSection {
     position: relative;
-    min-height: 100lvh;
-    height: 100%;
+    min-height: 100lvh; /* mobile URL-bar safe */
     width: 100dvw;
-    /* mobile URL-bar safe */
     overflow: hidden;
     display: grid;
     place-items: center;
 
-    /* every act stacks on the exact same center */
-    >* {
-        grid-area: 1 / 1;
+    > * {
         max-width: 100vw;
     }
 }
 
-/* --------------------------- ACT 1 — intro ----------------------- */
+/* ACT 1 — intro line */
 .intro {
     max-width: 16ch;
     margin: 0;
     padding-inline: clamp(1rem, 4vw, 3rem);
     text-align: center;
     font-weight: 700;
-    // letter-spacing: -0.2rem;
     line-height: 90%;
     font-size: clamp(2.6rem, 9.5vw, 9.75rem);
     will-change: transform, opacity;
@@ -51,22 +48,23 @@ $muted: rgba(13, 13, 13, 0.16);
 .introWord {
     display: inline-block;
     margin-inline: 0.14em;
-    opacity: 0.16;
-    /* pre-JS state matches GSAP initial — no flash */
-    transition: opacity 0.6s $ease-cinema;
+    opacity: 0.16; /* matches the GSAP start state so there's no flash */
     will-change: opacity;
     font-family: $font-heading;
 }
 
-/* ------------------------ ACT 2 — wordmark ----------------------- */
+/* ACT 2 — wordmark */
 .prashanta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* pinned dead-center regardless of content size */
     display: grid;
     place-items: center;
     width: 100%;
     will-change: transform, opacity, filter;
 
-    /* Force the Lottie and Fallback to stack perfectly on the exact same center */
-    >* {
+    > * {
         grid-area: 1 / 1;
     }
 }
@@ -83,14 +81,13 @@ $muted: rgba(13, 13, 13, 0.16);
     border: 0;
 }
 
-/* Share styles between both containers */
 .prashantaLottie,
 .prashantaFallback {
     width: min(32rem, 90vw);
     display: grid;
     place-items: center;
 
-    /* Force any dynamically injected SVGs to scale down gracefully on mobile */
+    /* Force injected SVGs to scale down gracefully on small screens */
     :global(svg) {
         width: 100% !important;
         max-width: 100%;
@@ -99,19 +96,27 @@ $muted: rgba(13, 13, 13, 0.16);
 }
 
 .prashantaLottie {
+    opacity: 1; /* revealed by scroll */
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
-/* -------------------------- ACT 3 — video ------------------------ */
+.prashantaFallback {
+    opacity: 0; /* shown only if Lottie fails or motion is reduced */
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 9vw, 7rem);
+}
+
+/* ACT 3 — video */
 .videoWrap {
     position: relative;
     display: grid;
     place-items: center;
     width: 320px;
-    /* Base desktop size */
     aspect-ratio: 1;
+    opacity: 0; /* revealed by scroll */
     will-change: transform, opacity;
 }
 
@@ -119,27 +124,29 @@ $muted: rgba(13, 13, 13, 0.16);
     width: 100%;
     height: 100%;
     object-fit: contain;
-    z-index: 999;
     user-select: none;
     pointer-events: none;
-    /* Clips the video into a perfect circle */
-    border-radius: 50%;
+    border-radius: 50%; /* clip the video into a circle */
 }
 
-/* -------------------------- STATIC — quote ----------------------- */
+/* Static quote + bowl */
+.after {
+    position: relative;
+    background: $paper;
+}
 
-.quotesection{
+.quotesection {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    flex-direction: column;
+    padding-block: 6rem;
 }
 
 .quote {
     max-width: 44rem;
     margin: 0;
-    // padding-inline: clamp(1rem, 4vw, 3rem);
     text-align: center;
     font-weight: 700;
     font-family: $font-heading;
@@ -148,34 +155,84 @@ $muted: rgba(13, 13, 13, 0.16);
     font-size: 2.6rem;
 }
 
-.by{
+.by {
     font-size: 1.2rem;
     font-weight: 500;
     font-family: $font-body;
 }
 
-/* --------------------------- afterwards -------------------------- */
-.after {
+.bowl {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Gallery — vertical stack by default (mobile + reduced motion) */
+.gallerySection {
     position: relative;
     background: $paper;
-    padding-bottom: 10rem;
 }
 
-
-.lineargallery{
+.galleryTrack {
     display: flex;
-    margin: 2rem;
     flex-direction: column;
     gap: 0;
-
-    @media (max-width: 768px){
-        margin: 0rem;
-    }
-    // border-radius: 2rem;
-    overflow: hidden;
+    margin: 0;
 }
 
-/* ------------------------- responsiveness ------------------------ */
+.galleryItem {
+    margin: 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+/* Horizontal scroll only on desktop with motion allowed */
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+    .gallerySection {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .galleryTrack {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding-inline: 1.5rem;
+        will-change: transform;
+    }
+
+    .galleryItem {
+        flex: 0 0 auto;
+        height: 70vh; /* fixed height keeps the row a predictable width */
+
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+}
+
+/* Signature */
+.signatureSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+    padding-bottom: 10rem;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Responsive tweaks */
 @media (max-width: 768px) {
     .intro {
         max-width: 12ch;
@@ -190,33 +247,32 @@ $muted: rgba(13, 13, 13, 0.16);
     .quote {
         max-width: 30ch;
         margin-inline: auto;
+        font-size: 2rem;
     }
 }
 
-/* ------------------------ reduced motion ------------------------- */
+/* Reduced motion — show every act statically, no pinning or scrubbing */
 @media (prefers-reduced-motion: reduce) {
-    .stage {
-        height: auto;
-        min-height: 100lvh;
-        grid-auto-rows: auto;
-        row-gap: 1rem;
-        width: 100dvw;
-        padding-block: 1rem;
-
-        >* {
-            grid-area: auto;
-            /* unstack — show acts as a static column */
-        }
+    .introSection,
+    .wordmarkSection,
+    .videoSection {
+        min-height: auto;
+        padding-block: 4rem;
     }
 
     .introWord {
         opacity: 1;
-        transition: none;
     }
 
-    .prashantaMark :global(path) {
-        opacity: 1 !important;
-        stroke-dashoffset: 0 !important;
-        fill-opacity: 1 !important;
+    .prashantaLottie {
+        display: none; /* Lottie never loads under reduced motion */
+    }
+
+    .prashantaFallback {
+        opacity: 1;
+    }
+
+    .videoWrap {
+        opacity: 1;
     }
 }
