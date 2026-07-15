@@ -9,7 +9,7 @@ export default function NavBar() {
 
             >
 
-                <Link href="/" className={styles.element}>Shantiniketan studio <sup>Beta</sup></Link>
+                <Link href="/" className={styles.element}>Shantiniketan studio</Link>
                 <Link className={styles.element} href="/">
                     Studio Life
                     <svg height="10" viewBox="0 0 74 61" fill="#fff" xmlns="http://www.w3.org/2000/svg">
