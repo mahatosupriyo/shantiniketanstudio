@@ -94,24 +94,6 @@
   border-radius: 4rem;
 }
 
-.save {
-  font-size: $fs-body;
-  color: $teal-ink;
-  text-align: right;
-
-  b {
-    font-weight: 700;
-  }
-
-  span {
-    color: $ink;
-  }
-
-  @media (max-width: $bp-tablet) {
-    text-align: left;
-  }
-}
-
 .placeholder {
   aspect-ratio: 3 / 2;
   background: $line;

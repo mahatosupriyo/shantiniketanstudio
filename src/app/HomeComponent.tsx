@@ -56,20 +56,6 @@ export default function HomeComponent() {
                     </svg>
                 </nav>
 
-                {/* <div className={styles.enrollcard}>
-
-                    <div className={styles.toplayer}>
-                        <h1 className={styles.heading}>
-                            Enroll in <br /> Pottery <br /> classes
-                        </h1>
-                        <p className={styles.info}>LAST DATE ON 7 AUG</p>
-                    </div>
-
-                    <button className={styles.btn}>
-                        Enroll here
-                    </button>
-
-                </div> */}
             </div>
 
 

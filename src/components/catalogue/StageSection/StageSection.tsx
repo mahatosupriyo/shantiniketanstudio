@@ -66,12 +66,6 @@ export default function StageSection({ stage, courses, showCatalogueLabel, promo
             </div>
           )}
 
-          {promo && (
-            <p className={styles.save}>
-              <b>Save {promo.saveText}</b>{' '}
-              <span>if purchased before {promo.deadline}.</span>
-            </p>
-          )}
         </div>
       </div>
     </RevealOnScroll>

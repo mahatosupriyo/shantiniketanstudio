@@ -27,10 +27,11 @@
 .meta {
   color: $ink;
   font-size: $fs-body;
+  margin-bottom: 2rem;
 }
 
 .pill {
-  margin-top: 2rem;
+  // margin-top: 2rem;
   display: inline-flex;
   align-self: flex-start;
   align-items: center;
@@ -71,6 +72,7 @@
   border-radius: 100px;
   color: $muted;
   font-size: $fs-body;
+  margin-top: 10rem;
 }
 
 .note {
@@ -95,7 +97,7 @@
 
     .lesson {
       flex: 1 1 45%;
-      min-width: 400px;
+      min-width: 600px;
     }
   }
 }
@@ -120,6 +122,10 @@
 .lessonName {
   font-size: 1.8rem;
   color: $ink;
+
+  @media (max-width: $bp-tablet) {
+    font-size: 1.4rem;
+  }
 }
 
 .format {

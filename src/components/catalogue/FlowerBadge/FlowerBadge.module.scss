@@ -42,12 +42,13 @@
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
+  
 }
 
 .price {
   font-family: $font-heading;
   font-weight: 800;
-  font-size: clamp($fs-lg, 3.4vw, $fs-xl);
+  font-size: clamp($fs-lg, 6vw, $fs-xl);
   text-transform: uppercase;
   line-height: 1;
 }
