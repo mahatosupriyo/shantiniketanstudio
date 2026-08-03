@@ -1,0 +1,24 @@
+// ============================================================
+// Font loading — import this in your root layout.tsx or globals.scss
+// ============================================================
+
+// Penelope (display) — drop your font file into public/fonts/
+@font-face {
+  font-family: 'Penelope';
+  src: url('/fonts/Penelope.woff2') format('woff2'),
+       url('/fonts/Penelope.woff')  format('woff'),
+       url('/fonts/Penelope.otf')   format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+// Figtree (body) — loaded via next/font/google in layout.tsx
+// or via <link> in <head>. If using next/font:
+//
+//   import { Figtree } from 'next/font/google';
+//   const figtree = Figtree({ subsets: ['latin'], variable: '--font-body' });
+//
+// Then on <body className={figtree.variable}>
+//
+// The SCSS variable $font-body already includes the fallback stack,
+// so both approaches work without changes to component code.

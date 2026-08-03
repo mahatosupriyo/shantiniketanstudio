@@ -1,0 +1,20 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  // A fixed, explicit height — not min-height. Both .page children are
+  // position: absolute (they don't contribute to this box's height at
+  // all), so .wrap needs a real height of its own to have something for
+  // them to fill. This is what guarantees they can never stack in normal
+  // flow, regardless of what any animation library detects at runtime.
+  height: 100vh;
+  height: 100dvh;
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; // lets an individual page taller than one screen scroll
+  will-change: transform; // smoother GPU-composited slide, fewer dropped frames
+}

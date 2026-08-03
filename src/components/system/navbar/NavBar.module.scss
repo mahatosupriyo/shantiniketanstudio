@@ -1,4 +1,4 @@
-@import '../../../app/variables.scss';
+@import '../../../app/_variables.scss';
 
 .navbar {
     padding: 2rem 2rem;
@@ -10,7 +10,7 @@
 
     position: fixed;
     top: 0;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     z-index: 999999;
     transition: 0.4s ease-in-out;
 
@@ -21,29 +21,21 @@
         .element {
             text-transform: uppercase;
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 600;
             padding: 1rem 0rem;
             line-height: 100%;
 
             position: relative;
-            display: flex;
+            display: inline-flex;
             overflow: hidden;
             gap: 0.5rem;
-            color: #fff;
+            color: #000;
 
             font-family: $font-body;
 
             &:nth-child(2) {
                 justify-self: end;
                 text-align: right;
-            }
-
-            sup {
-                font-size: 0.8rem;
-                margin-top: 0.5rem;
-                margin-left: 0.1rem;
-                text-transform: none;
-                font-weight: 400;
             }
 
             &:nth-child(2),
@@ -54,7 +46,7 @@
                     bottom: 0;
                     width: 100%;
                     height: 0.16rem;
-                    background-color: #fff;
+                    background-color: #000;
                     transform: translateX(-101%);
                     transition: all 0.4s cubic-bezier(1, 0, 0, 1);
                 }
@@ -69,20 +61,6 @@
             &:last-child {
                 justify-self: end;
                 text-align: right;
-            }
-
-
-            &:nth-child(2) {
-                border: 0.1rem solid transparent;
-                color: hsl(0, 0%, 100%, 0.5);
-
-                &:hover {
-                    border-bottom: 0.1rem dashed hsl(0, 0%, 100%, 0.5);
-                }
-
-                &:after {
-                    display: none;
-                }
             }
         }
     }

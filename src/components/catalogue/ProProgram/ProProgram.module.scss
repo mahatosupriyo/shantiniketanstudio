@@ -1,0 +1,140 @@
+@import '../../../app/_variables.scss';
+
+.finale {
+  background: $maroon;
+  color: $cream;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: $content-max;
+  padding: $gap-section-pro $content-pad;
+
+  @media (max-width: $bp-tablet) {
+    padding: 6rem 2rem;
+  }
+}
+
+.eyebrow {
+  color: $cream;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+// ---- Head: title + circle ----
+
+.head {
+  display: flex;
+  gap: clamp($fs-lg, 5vw, $fs-2xl);
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (max-width: $bp-tablet) {
+    flex-direction: column;
+  }
+}
+
+.title {
+  font-family: $font-heading;
+  font-weight: 800;
+  font-size: clamp($fs-lg, 6.6vw, $fs-2xl);
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  line-height: 0.94;
+  color: $cream;
+  max-width: 16ch;
+}
+
+.circle {
+  flex-shrink: 0;
+  width: 16rem;
+  aspect-ratio: 1/1;
+  border-radius: 50rem;
+  background: $circle-bg;
+  color: $ink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $fs-body;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+
+  span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 146%;
+    max-width: 90%;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $cream;
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+// ---- Curriculum ----
+
+.curriculum {
+  display: flex;
+  gap: 2rem;
+  max-width: 100%;
+
+  @media (max-width: $bp-tablet) {
+    flex-direction: column;
+    gap: $fs-body;
+    max-width: 100%;
+  }
+
+  ul {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $fs-body;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    font-size: 1.6rem;
+    color: $cream;
+    font-weight: 500;
+    // letter-spacing: 0.01em;
+
+
+    @media (max-width: $bp-tablet) {
+      font-size: 1.4rem;
+    }
+  }
+
+  sup {
+    font-size: 0.8rem;
+    color: $cream-dim;
+    padding-right: 1rem;
+    font-feature-settings: 'sups';
+  }
+}
+
+.foot {
+  max-width: 60%;
+  color: $cream-dim;
+  font-size: $fs-body;
+  line-height: 136%;
+  font-weight: 500;
+
+  @media (max-width: $bp-tablet) {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}

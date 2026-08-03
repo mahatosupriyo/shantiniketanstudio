@@ -1,0 +1,55 @@
+$font-body: var(--font-body-main);
+$font-heading: var(--system-heading);
+
+body {
+  font-family: $font-body;
+}
+
+.title {
+  font-family: $font-heading;
+}
+
+
+// ============================================================
+// Shantiniketan Studio — Design Tokens
+// ============================================================
+
+// ---- Golden-ratio type scale (φ ≈ 1.618) ----
+// Min: 1rem | Each step × φ, rounded to one decimal
+$fs-body:    1.4rem;    // base
+$fs-md:      1.4rem;  // course titles, meta
+$fs-lg:      1.6rem;  // sub-headings
+$fs-xl:      2.6rem;  // stage words (mobile)
+$fs-2xl:     4.2rem;  // stage words (desktop)
+$fs-display: 6.8rem;  // hero display
+
+// ---- Palette ----
+$paper:       #ffffff;
+$ink:         #141210;
+$body-clr:    #2b2926;
+$muted:       #9a9a9a;
+$muted-light: #c1bdb8;
+$line:        #e9e6e1;
+$teal:        #58e0c8;
+$teal-ink:    #0e9a83;
+$maroon:      hsl(3, 26%, 18%);
+$cream:       #efe9e2;
+$cream-dim:   #c8bbb5;
+$pill-bg:     #1a1714;
+$circle-bg:   #f8f6f1;
+
+// ---- Typography ----
+// $font-heading: 'Penelope', 'Bricolage Grotesque', sans-serif;
+// $font-body:    'Figtree', system-ui, -apple-system, sans-serif;
+
+// ---- Section spacing ----
+$gap-section:     clamp(4.2rem, 10vw, 9rem);     // white sections
+$gap-section-pro: clamp(2.6rem, 8vw, 6.8rem);    // maroon band
+
+// ---- Layout ----
+$content-max: 1440px;
+$content-pad: clamp(1.2rem, 5vw, 4.2rem);
+$rail:        clamp(0rem, 13vw, 12.8rem);
+
+// ---- Breakpoint ----
+$bp-tablet: 900px;

@@ -1,0 +1,131 @@
+@import '../../../app/_variables.scss';
+
+.section {
+  max-width: 100%;
+  padding: 4rem 6rem;
+
+  @media (max-width: $bp-tablet) {
+    padding: 4rem 2rem;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (max-width: $bp-tablet) {
+    flex-direction: column;
+  }
+}
+
+// ---- Text column ----
+
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+
+  @media (max-width: $bp-tablet) {
+    max-width: none;
+    order: 2;
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stageNo {
+  font-weight: 700;
+  font-size: $fs-body;
+  text-transform: uppercase;
+}
+
+.word {
+  font-family: $font-heading;
+  font-weight: 800;
+  font-size: clamp($fs-xl, 9.5vw, $fs-display);
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  line-height: 100%;
+}
+
+.desc {
+  max-width: 46ch;
+  color: $body-clr;
+  font-size: $fs-body;
+  line-height: 136%;
+}
+
+// ---- Media column ----
+
+.media {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $fs-body;
+  max-width: 60rem;
+
+  @media (max-width: $bp-tablet) {
+    order: 1;
+  }
+}
+
+.photo {
+  position: relative;
+  overflow: visible;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+
+  pointer-events: none;
+  user-select: none;
+
+  border-radius: 4rem;
+}
+
+.save {
+  font-size: $fs-body;
+  color: $teal-ink;
+  text-align: right;
+
+  b {
+    font-weight: 700;
+  }
+
+  span {
+    color: $ink;
+  }
+
+  @media (max-width: $bp-tablet) {
+    text-align: left;
+  }
+}
+
+.placeholder {
+  aspect-ratio: 3 / 2;
+  background: $line;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+
+  span {
+    font-family: $font-heading;
+    font-weight: 800;
+    font-size: $fs-lg;
+    text-transform: uppercase;
+    color: $muted-light;
+    opacity: 0.5;
+  }
+}

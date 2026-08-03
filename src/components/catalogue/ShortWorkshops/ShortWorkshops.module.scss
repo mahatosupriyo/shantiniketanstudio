@@ -1,0 +1,72 @@
+@import '../../../app/_variables.scss';
+
+.wrap {
+  @include wrap;
+}
+
+.section {
+  @include rail;
+  padding-bottom: clamp(70px, 11vw, 120px);
+}
+
+.stageNo {
+  @include eyebrow;
+  margin: 0;
+}
+
+.word {
+  @include display;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  margin: 0.34rem 0 0.9rem;
+}
+
+.intro {
+  margin: 0 0 clamp(28px, 4vw, 48px);
+  max-width: 46ch;
+  color: $body;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+// ---- Workshop cards ----
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  padding: 1.25rem;
+  border: 1px solid $line;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $muted;
+  }
+}
+
+.cardNo {
+  font-size: 0.72rem;
+  color: $muted-light;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.cardName {
+  font-size: 0.94rem;
+  color: $ink;
+  font-weight: 500;
+}
+
+.comingSoon {
+  color: $muted;
+  font-size: 0.88rem;
+  font-style: italic;
+  margin: 0;
+}

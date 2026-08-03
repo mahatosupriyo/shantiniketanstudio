@@ -1,0 +1,11 @@
+// @use './styles/variables' as *;
+@import '../_variables.scss';
+
+.page {
+  background: $paper;
+  color: $ink;
+  font-family: $font-body;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
