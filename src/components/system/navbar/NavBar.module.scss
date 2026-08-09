@@ -30,7 +30,7 @@
         align-items: center;
         background-color: $cream;
         // border-bottom: 0.1rem solid hsl(35, 19%, 17%, 0.3);
-        border-radius: calc(2rem + 0.4rem);
+        border-radius: 10rem;
         padding: 0.4rem;
         box-shadow: hsla(35, 19%, 2%, 0.4) 0px 18px 100px 0px;
         width: max-content;
@@ -41,7 +41,6 @@
 
         .slider {
             $offset: 0.24rem;
-
             position: absolute;
             top: $offset;
             bottom: $offset;
@@ -49,7 +48,7 @@
             /* Exactly half width minus the padding offset so it fits perfectly inside */
             width: calc(50% - $offset);
             background-color: hsl(35, 19%, 17%);
-            border-radius: 2rem;
+            border-radius: 20rem;
             /* Cubic-bezier adds a nice slight 'snap' to the slide */
             transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
             z-index: 1;
@@ -70,7 +69,7 @@
             // letter-spacing: 0.02rem;
             font-size: 1.36rem;
             line-height: 100%;
-            padding: 2.4rem 1.8rem;
+            padding: 2rem 1.8rem;
             transition: color 0.3s ease-in-out;
             text-decoration: none;
 
