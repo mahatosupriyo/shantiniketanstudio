@@ -23,6 +23,7 @@ export interface Course {
   stage: string;
   duration: Duration;
   studio_fee: number | null;
+  url?: string;
   fee_note?: string;
   prerequisite: string | null;
   experience_required: boolean;
@@ -36,10 +37,9 @@ export interface Stage {
   label: string;
   order: number;
   description: string;
-  image?: string;         // path under /images/courses/
+  image?: string;      
 }
 
-// ---- Stage metadata (descriptions + images) ----
 
 export const STAGES: Stage[] = [
   {
@@ -62,7 +62,7 @@ export const STAGES: Stage[] = [
     id: 'surface',
     label: 'Surface',
     order: 3,
-    image: '/assets/courses/stdioeight.jpeg',
+    image: '/assets/courses/stdiothree.jpeg',
     description:
       'Texture, carving and pattern — the marks that stay after the clay is fired. Surface is where a piece stops being generic and starts being yours.',
   },
@@ -70,7 +70,7 @@ export const STAGES: Stage[] = [
     id: 'glaze',
     label: 'Glaze',
     order: 4,
-    image: '/assets/courses/stdionine.jpeg',
+    image: '/assets/courses/stdioten.jpeg',
     description:
       'Chemistry you can see. From dipping and pouring to formulating your own recipes — colour, opacity and melt, controlled.',
   },
@@ -100,7 +100,7 @@ export const WORKSHOPS_STAGE: Stage = {
   id: 'later',
   label: 'Short Workshops',
   order: 7,
-  image: '/assets/courses/stdiotwo.jpeg',
+  image: '/assets/courses/stdiofive.jpeg',
   description:
     'One-off and themed workshops — miniatures, corporate team days, community sessions. Dates and fees announced per workshop.',
 };
@@ -117,6 +117,7 @@ export const COURSES: Course[] = [
     studio_fee: 500,
     prerequisite: null,
     experience_required: false,
+    url: "https://payments.cashfree.com/forms/beginner-foundation-course",
     notes: null,
     lessons: [
       { lesson_number: 1, name: 'Intensive Beginner Hand-building' },

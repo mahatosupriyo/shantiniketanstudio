@@ -2,10 +2,14 @@
 @import '../_variables.scss';
 
 .page {
-  background: $paper;
+  background: $cream;
   color: $ink;
   font-family: $font-body;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+.catalogue {
+  background-color: #efe9e2;
 }

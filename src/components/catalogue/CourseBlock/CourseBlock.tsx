@@ -1,6 +1,5 @@
 'use client';
 
-import { relative } from 'path';
 import type { Course } from '../../../app/catalogue/data/courses';
 import { formatFee, formatDuration } from '../../../app/catalogue/data/courses';
 import styles from './CourseBlock.module.scss';
@@ -32,7 +31,7 @@ export default function CourseBlock({ course, showRule = false }: Props) {
 
         <div>
           {course.studio_fee !== null ? (
-            <a className={styles.pill} href="#">
+            <a className={styles.pill} href={course.url} target="_blank" rel="noopener noreferrer">
               <span className={styles.pilldata}>
                 Grab your seat at&nbsp;<b>{fee}</b>
               </span>

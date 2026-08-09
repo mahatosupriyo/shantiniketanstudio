@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 import Hero from './Hero'
 import NavBar from '@/components/system/navbar/NavBar'
 import CourseCataloguePage from './Catalogue'
+import styles from './page.module.scss'
 
 /* Meta Data Page name */
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 function TestPage() {
     return (
-        <div>
+        <div className={styles.catalogue}>
             <NavBar />
             <Hero />
             <CourseCataloguePage />

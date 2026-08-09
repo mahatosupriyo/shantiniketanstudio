@@ -38,7 +38,7 @@ export default function RevealOnScroll({
       ref={ref}
       className={className}
       initial={{ opacity: 0, y: offset }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: offset }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: offset }}
       transition={{
         duration: 0.7,
         delay,

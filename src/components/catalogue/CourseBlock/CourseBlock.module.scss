@@ -88,7 +88,7 @@
   flex-direction: column;
   gap: 2rem;
   padding: 0rem 2rem;
-  margin: 2rem 0rem 0rem 0rem;
+  margin: 2rem 2rem 0rem 0rem;
   list-style: none;
 
   &.twoCol {
@@ -96,8 +96,7 @@
     flex-wrap: wrap;
 
     .lesson {
-      flex: 1 1 45%;
-      min-width: 600px;
+      flex: 1 1 55%;
     }
   }
 }

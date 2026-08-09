@@ -15,53 +15,73 @@
     transition: 0.4s ease-in-out;
 
     .toplayer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
 
-        .element {
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 1rem 0rem;
-            line-height: 100%;
+    }
 
+    .navbtnlist {
+        position: relative;
+        /* Required to anchor the absolute slider */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: $cream;
+        // border-bottom: 0.1rem solid hsl(35, 19%, 17%, 0.3);
+        border-radius: calc(2rem + 0.4rem);
+        padding: 0.4rem;
+        box-shadow: hsla(35, 19%, 2%, 0.4) 0px 18px 100px 0px;
+        width: max-content;
+        z-index: 1;
+
+        /* The sliding background circle/pill */
+
+
+        .slider {
+            $offset: 0.24rem;
+
+            position: absolute;
+            top: $offset;
+            bottom: $offset;
+            left: $offset;
+            /* Exactly half width minus the padding offset so it fits perfectly inside */
+            width: calc(50% - $offset);
+            background-color: hsl(35, 19%, 17%);
+            border-radius: 2rem;
+            /* Cubic-bezier adds a nice slight 'snap' to the slide */
+            transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 1;
+        }
+
+        .btn {
             position: relative;
-            display: inline-flex;
-            overflow: hidden;
-            gap: 0.5rem;
+            flex: 1;
+            /* Forces both buttons to take up exactly 50% of the space evenly */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
             color: #000;
+            // text-transform: uppercase;
+            font-weight: 500;
+            // letter-spacing: 0.02rem;
+            font-size: 1.36rem;
+            line-height: 100%;
+            padding: 2.4rem 1.8rem;
+            transition: color 0.3s ease-in-out;
+            text-decoration: none;
 
+            /* Ensure the text is placed higher than the slider */
+            z-index: 2;
             font-family: $font-body;
+        }
 
-            &:nth-child(2) {
-                justify-self: end;
-                text-align: right;
-            }
-
-            &:nth-child(2),
-            &:nth-child(3) {
-                &:after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    width: 100%;
-                    height: 0.16rem;
-                    background-color: #000;
-                    transform: translateX(-101%);
-                    transition: all 0.4s cubic-bezier(1, 0, 0, 1);
-                }
-
-                &:hover {
-                    &:after {
-                        transform: translateX(0%);
-                    }
-                }
-            }
-
-            &:last-child {
-                justify-self: end;
-                text-align: right;
-            }
+        /* Toggles the text color smoothly when the dark slider moves underneath */
+        .activeText {
+            color: #fff;
         }
     }
 }

@@ -1,12 +1,11 @@
 'use client';
 
+import { useEffect } from 'react';
 import type { Stage, Course } from '../../../app/catalogue/data/courses';
-import { formatFee } from '../../../app/catalogue/data/courses'
 import CourseBlock from '../CourseBlock/CourseBlock';
 import FlowerBadge from '../FlowerBadge/FlowerBadge';
 import RevealOnScroll from '../RevealOnScroll/RevealOnScroll';
 import styles from './StageSection.module.scss';
-
 
 interface Promo {
   currentPrice: string;
@@ -24,7 +23,25 @@ interface Props {
   sectionRef?: (el: HTMLElement | null) => void;
 }
 
-export default function StageSection({ stage, courses, showCatalogueLabel, promo }: Props) {
+export default function StageSection({ stage, courses, promo }: Props) {
+  
+  useEffect(() => {
+    // Variable to hold the instance for cleanup
+    let scrollInstance: any;
+
+    // Dynamically import Locomotive Scroll so it only loads in the browser environment
+    import('locomotive-scroll').then((LocomotiveScroll) => {
+      scrollInstance = new LocomotiveScroll.default();
+    });
+
+    // Cleanup function to destroy the scroll instance when the component unmounts
+    return () => {
+      if (scrollInstance) {
+        scrollInstance.destroy();
+      }
+    };
+  }, []); // Empty dependency array ensures this only runs once on mount
+
   return (
     <RevealOnScroll className={styles.section}>
       <div className={styles.row}>
@@ -42,7 +59,7 @@ export default function StageSection({ stage, courses, showCatalogueLabel, promo
         </div>
 
         {/* ---- media ---- */}
-        <div className={styles.media}>
+        <div className={styles.media} data-scroll data-scroll-speed="0.05">
           {stage.image ? (
             <figure className={styles.photo}>
               <img
@@ -51,7 +68,7 @@ export default function StageSection({ stage, courses, showCatalogueLabel, promo
                 width={960}
                 height={641}
                 className={styles.img}
-              // priority={stage.order <= 2}
+                // priority={stage.order <= 2}
               />
               {promo && (
                 <FlowerBadge
@@ -65,7 +82,6 @@ export default function StageSection({ stage, courses, showCatalogueLabel, promo
               <span>{stage.label}</span>
             </div>
           )}
-
         </div>
       </div>
     </RevealOnScroll>
