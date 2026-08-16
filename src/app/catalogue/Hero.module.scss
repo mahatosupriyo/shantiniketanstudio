@@ -54,9 +54,6 @@
 .fgLayer {
     z-index: 2;
     transform: scale(1.08); // ← this collides with GSAP's translate on the same element
-
-
-
 }
 
 .content {

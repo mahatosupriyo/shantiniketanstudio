@@ -37,7 +37,7 @@ export interface Stage {
   label: string;
   order: number;
   description: string;
-  image?: string;      
+  image?: string;
 }
 
 
@@ -114,7 +114,7 @@ export const COURSES: Course[] = [
     name: 'Beginner Foundation Courses',
     stage: 'clay',
     duration: { value: 1, unit: 'weekend' },
-    studio_fee: 500,
+    studio_fee: 499,
     prerequisite: null,
     experience_required: false,
     url: "https://payments.cashfree.com/forms/beginner-foundation-course",
@@ -131,9 +131,10 @@ export const COURSES: Course[] = [
     name: 'Intermediate Courses',
     stage: 'form',
     duration: { value: 2, unit: 'weekend' },
-    studio_fee: 1000,
+    studio_fee: 999,
     prerequisite: 'Basic hand-building knowledge',
     experience_required: true,
+    url: 'https://payments.cashfree.com/forms/intermediate-courses',
     notes: null,
     lessons: [
       { lesson_number: 1, name: 'Hand-building Level 02' },
@@ -147,9 +148,10 @@ export const COURSES: Course[] = [
     name: 'Wheel Throwing',
     stage: 'form',
     duration: { value: 4, unit: 'weekend' },
-    studio_fee: 3000,
+    studio_fee: 2999,
     prerequisite: null,
     experience_required: false,
+    url: 'https://payments.cashfree.com/forms/wheel-throwing',
     notes: null,
     lessons: [
       { lesson_number: 1, name: 'Beginner Wheel Throwing' },
@@ -166,9 +168,10 @@ export const COURSES: Course[] = [
     name: 'Sculpture',
     stage: 'form',
     duration: { value: 4, unit: 'weekend' },
-    studio_fee: 4000,
+    studio_fee: 3999,
     prerequisite: null,
     experience_required: false,
+    url: "https://payments.cashfree.com/forms/forming-sculpture",
     notes: null,
     lessons: [
       { lesson_number: 1, name: 'Relief Sculpture' },
@@ -183,9 +186,10 @@ export const COURSES: Course[] = [
     name: 'Surface Decoration',
     stage: 'surface',
     duration: { value: 2, unit: 'weekend' },
-    studio_fee: 2000,
+    studio_fee: 1999,
     prerequisite: null,
     experience_required: false,
+    url: "https://payments.cashfree.com/forms/surface-decoration",
     notes: null,
     lessons: [
       { lesson_number: 1, name: 'Ceramic surface decoration' },
@@ -200,14 +204,15 @@ export const COURSES: Course[] = [
     name: 'Glaze Courses',
     stage: 'glaze',
     duration: { value: 4, unit: 'weekend' },
-    studio_fee: 5000,
+    studio_fee: 4999,
     prerequisite: null,
     experience_required: false,
+    url: "https://payments.cashfree.com/forms/glaze-course",
     notes: null,
     lessons: [
       { lesson_number: 1, name: 'Principles of Glaze Application' },
       { lesson_number: 2, name: 'Glaze Application Level 1' },
-      { lesson_number: 3, name: 'Glaze Formulation Theory & Practical'},
+      { lesson_number: 3, name: 'Glaze Formulation Theory & Practical' },
       { lesson_number: 4, name: 'Making your own glazes', is_professional_elective: true },
     ],
   },
@@ -220,6 +225,7 @@ export const COURSES: Course[] = [
     studio_fee: 3000,
     prerequisite: null,
     experience_required: false,
+    url: "https://payments.cashfree.com/forms/slip-casting-mold-making",
     notes: null,
     lessons: [
       { lesson_number: 1, name: 'Introduction to Slip Casting' },
@@ -233,9 +239,10 @@ export const COURSES: Course[] = [
     name: 'Alternative Firing',
     stage: 'fire',
     duration: { value: 2, unit: 'weekend' },
-    studio_fee: 5000,
+    studio_fee: 4999,
     prerequisite: 'Bisque-fired work to bring to class',
     experience_required: false,
+    url: "https://payments.cashfree.com/forms/firing",
     notes: null,
     lessons: [
       { lesson_number: 1, name: 'Raku Firing' },
@@ -249,9 +256,10 @@ export const COURSES: Course[] = [
     name: 'Professional Foundation Program',
     stage: 'pro',
     duration: { value: 12, unit: 'weekend' },
-    studio_fee: 12000,
+    studio_fee: 11999,
     prerequisite: null,
     experience_required: false,
+    url: "https://payments.cashfree.com/forms?code=certification-program",
     notes: 'Long-term professional curriculum. Ends in a portfolio project, a final exhibition, and certification.',
     lessons: [
       { lesson_number: 1, name: 'Understanding Clay' },

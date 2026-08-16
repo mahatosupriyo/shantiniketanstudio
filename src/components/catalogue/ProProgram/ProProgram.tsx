@@ -24,7 +24,7 @@ export default function ProProgram({ stage, course }: Props) {
           <h2 className={styles.title}>
             The whole process, in order, over twelve weekends.
           </h2>
-          <a className={styles.circle} href="#">
+          <a className={styles.circle} href="https://payments.cashfree.com/forms?code=certification-program">
             <span>Grab your <br /> seat at {fee}</span>
           </a>
         </div>

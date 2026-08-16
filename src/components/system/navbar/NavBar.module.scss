@@ -10,7 +10,6 @@
 
     position: fixed;
     top: 0;
-    // mix-blend-mode: difference;
     z-index: 999999;
     transition: 0.4s ease-in-out;
 
@@ -64,9 +63,7 @@
             text-align: center;
 
             color: #000;
-            // text-transform: uppercase;
             font-weight: 500;
-            // letter-spacing: 0.02rem;
             font-size: 1.36rem;
             line-height: 100%;
             padding: 2rem 1.8rem;
