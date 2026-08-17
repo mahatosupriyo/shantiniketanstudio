@@ -5,6 +5,7 @@ import "./globals.css";
 import "./fonts.scss";
 import Footer from "@/components/system/Footer/Footer";
 import SmoothScroll from "./SmoothScroll";
+import MusicToggle from "./MusicToggle/MusicToggle";
 
 const rethinkSans = Rethink_Sans({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
         className={`${rethinkSans.variable} ${figtree.variable}  ${formHead.variable} ${youth.variable}`}
       >
         <SmoothScroll>
+          <MusicToggle src="/bgsound.mp3" />
           {children}
         </SmoothScroll>
         <Footer />
