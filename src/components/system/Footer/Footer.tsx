@@ -53,11 +53,16 @@ export default function Footer() {
             <div className={styles.bottomlayer}>
                 <a href="mailto:tanmoy.design@gmail.com" className={styles.contact}>Contact us at : tanmoy.design@gmail.com</a>
                 <span className={styles.copyright}>
-                    &copy; 2024 Shantiniketan Studio. All rights reserved
+                    SHANTINIKETAN STUDIO &copy; 2026. All rights reserved
                 </span>
                 <p className={styles.foot}>
-                    We are a ceramics school rooted in Shantiniketan, West Bengal. We teach the hand-building bench, the potter's wheel, glaze chemistry, and alternative firing methods to everyone from first-time makers to professional artists. Each course is structured around the ceramic process itself — from wedging clay to pulling walls, from carving texture to formulating glazes, from bisque loading to raku pulls — so that you learn not just technique, but the thinking behind it. Ten courses run on consecutive weekends. One fee covers every lesson in the course.
-                    All photography on this site is by Abhishek Hegde, taken during courses and open studio days at Shantiniketan Studio. These images capture the work as it happens — students at the wheel, hands in clay, glazes being mixed, kilns being loaded — and show the studio as an active place where making happens daily.
+                    Shantiniketan Studio. All rights reserved
+
+                    We are a ceramics school rooted in Shantiniketan, West Bengal. We teach the hand-building bench, the potter's wheel, glaze chemistry, and alternative firing methods to everyone from first-time makers to professional artists.
+
+                    Clay has a quiet way of bringing us back to the present. As your hands touch, press, shape, and transform it, the rhythm of making naturally slows the mind and creates a sense of calm. There is no need to rush—the clay responds to patience, attention, and touch.
+                    You will love immersing yourself in the meditative qualities of Shantiniketan’s clay. The simple act of shaping something with your hands becomes a mindful conversation between you, the material, and the moment. The joy of creating through clay is a memorable experience—one that you will want to return to, again and again.
+                    All photography on this site is by Abhishek Hegde.
                 </p>
             </div>
 

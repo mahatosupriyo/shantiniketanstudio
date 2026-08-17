@@ -77,7 +77,7 @@ export default function Hero() {
       <div className={styles.layer} data-depth="0.5" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/Background.png"
+          src="/images/Background.webp"
           alt=""
           className={styles.bgImage}
           loading="eager"
@@ -101,7 +101,7 @@ export default function Hero() {
       <div className={`${styles.layer} ${styles.fgLayer}`} data-depth="1.4" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/Foreground.png"
+          src="/images/Foreground.webp"
           alt=""
           className={styles.fgImage}
           loading="eager"

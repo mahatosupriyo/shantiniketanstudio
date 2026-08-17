@@ -1,0 +1,78 @@
+@import '../../../_variables.scss';
+
+$padding: 1rem;
+
+.content {
+    background-color: #fff;
+}
+
+.imagewraper {
+    padding: 10rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.inspo {
+    border-radius: 20rem;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    max-width: 40rem;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+
+    .asset {
+        border-radius: 4rem;
+    }
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        position: absolute;
+        top: 20%;
+        font-family: $font-heading;
+        font-size: clamp(2.6rem, 9.5vw, 9.75rem);
+        text-align: center;
+        color: #472E2A;
+        line-height: 90%;
+        padding: $padding;
+    }
+
+    .desc {
+        display: flex;
+        gap: 1.6rem;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 4rem;
+        padding: $padding;
+
+        .subheading {
+            text-align: center;
+            font-family: $font-heading;
+            font-size: clamp(1.2rem, 9.5vw, 2rem);
+            color: #fff;
+            line-height: 100%;
+        }
+    }
+
+    .heroimage {
+        display: flex;
+        width: 100%;
+        object-fit: cover;
+        min-height: 100lvh;
+    }
+}
