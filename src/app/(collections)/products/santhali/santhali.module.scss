@@ -29,8 +29,17 @@ $padding: 1rem;
     padding: 2rem;
     gap: 2rem;
 
+    @media (max-width: $bp-tablet){
+        gap: 0.4rem;
+        padding: 0.6rem;
+    }
+
     .asset {
         border-radius: 4rem;
+
+        @media (max-width: $bp-tablet) {
+            border-radius: 1.6rem;
+        }
     }
 }
 
