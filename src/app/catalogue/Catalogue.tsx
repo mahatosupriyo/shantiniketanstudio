@@ -5,7 +5,6 @@ import Hero from '@/components/catalogue/Hero/Hero';
 import StageSection from '@/components/catalogue/StageSection/StageSection';
 import ProProgram from '@/components/catalogue/ProProgram/ProProgram';
 import styles from './page.module.scss';
-import { useSmoothScroll } from '../(collections)/products/prashanta/useSmoothScroll';
 
 // Promo config — remove or update as needed
 const CLAY_PROMO = {
@@ -18,7 +17,6 @@ const CLAY_PROMO = {
 export default function CourseCataloguePage() {
   const proCourse = COURSES.find((c) => c.stage === 'pro')!;
   const workshopsCourse = COURSES.find((c) => c.stage === 'later')!;
-  useSmoothScroll();
 
   // Combine regular stages + workshops stage (rendered same way)
   const allStages = [...STAGES, WORKSHOPS_STAGE];

@@ -28,8 +28,8 @@ export default function SanthaliHero() {
         y: gsap.quickTo(node, "y", { duration: 1.1, ease: "power3.out" }),
       }));
 
-      const AMP_X = 30;
-      const AMP_Y = 18;
+      const AMP_X = 4;
+      const AMP_Y = 4;
 
       const onMove = (e: PointerEvent) => {
         const r = el.getBoundingClientRect();

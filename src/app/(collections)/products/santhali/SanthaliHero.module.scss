@@ -37,7 +37,7 @@
     object-fit: cover;
     object-position: center;
     /* slight overscale so the drift never exposes an edge */
-    transform: scale(1.08);
+    transform: scale(1.02);
 }
 
 .title {

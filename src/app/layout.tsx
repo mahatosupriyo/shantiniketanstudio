@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "./fonts.scss";
 import Footer from "@/components/system/Footer/Footer";
+import SmoothScroll from "./SmoothScroll";
 
 const rethinkSans = Rethink_Sans({
   subsets: ["latin"],
@@ -48,8 +49,10 @@ export default function RootLayout({
       <body
         className={`${rethinkSans.variable} ${figtree.variable}  ${formHead.variable} ${youth.variable}`}
       >
-        {children}
-        <Footer/>
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+        <Footer />
       </body>
     </html>
   );

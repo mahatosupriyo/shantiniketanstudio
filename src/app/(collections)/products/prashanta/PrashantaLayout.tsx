@@ -1,9 +1,6 @@
 'use client'
 
 import NavBar from '@/components/system/navbar/NavBar'
-import AnimatedSignature from '@/components/system/animatedsignature/AnimatedSign'
-import { useSmoothScroll } from './useSmoothScroll'
-import { SIGNATURE_PATHS } from './signaturePaths'
 import IntroSection from './IntroSection'
 import VideoSection from './VideoSection'
 import GallerySection from './GallerySection'
@@ -16,7 +13,6 @@ const QUOTE_LINE =
    Each act lives in its own pinned section so they can be tuned independently. */
 export default function Prashanta() {
     /* Smooth scrolling for the whole page (auto-skips under reduced motion) */
-    useSmoothScroll()
 
     return (
         <div className={styles.root}>
