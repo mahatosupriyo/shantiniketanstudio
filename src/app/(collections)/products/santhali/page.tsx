@@ -1,13 +1,14 @@
 "use client";
 import NavBar from '@/components/system/navbar/NavBar'
 import styles from './santhali.module.scss'
+import SanthaliHero from './SanthaliHero';
 
 function SanthaliPage() {
     return (
         <div className={styles.content}>
             <NavBar />
             
-            <div className={styles.hero}>
+            {/* <div className={styles.hero}>
 
                 <h1 className={styles.title}>
                     Santhali tattoo <br /> inspired ceramics
@@ -23,7 +24,9 @@ function SanthaliPage() {
                         Both become marks that remain
                     </h3>
                 </div>
-            </div>
+            </div> */}
+
+            <SanthaliHero/>
 
 
             <div className={styles.imagewraper}>
