@@ -36,11 +36,11 @@ $paper: #ffffff;
 .intro {
     max-width: 16ch;
     margin: 0;
-    padding-inline: clamp(1rem, 4vw, 3rem);
+    padding-inline: clamp(1rem, 4vw, 2rem);
     text-align: center;
     font-weight: 700;
     line-height: 90%;
-    font-size: clamp(2.6rem, 9.5vw, 9.75rem);
+    font-size: clamp(2.6rem, 9.5vw, 8rem);
     will-change: transform, opacity;
     user-select: none;
 }
@@ -148,16 +148,16 @@ $paper: #ffffff;
     max-width: 44rem;
     margin: 0;
     text-align: center;
-    font-weight: 700;
-    font-family: $font-heading;
+    font-weight: 600;
+    font-family: $font-body;
     letter-spacing: -0.01em;
     line-height: 1.1;
     font-size: 2.6rem;
 }
 
 .by {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 400;
     font-family: $font-body;
 }
 

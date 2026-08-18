@@ -41,7 +41,7 @@ export default function IntroSection() {
                 scrollTrigger: {
                     trigger: section,
                     start: 'top top',
-                    end: '+=2000', /* scroll distance for this act — tune to taste */
+                    end: '+=1000', /* scroll distance for this act — tune to taste */
                     pin: true,
                     /* scrub: true = tied directly to scroll position, zero lag.
                        This is the standard choice whenever content must never

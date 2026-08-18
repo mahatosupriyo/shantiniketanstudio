@@ -15,6 +15,7 @@ const EDGE_FADE_DURATION = 0.25 // seconds — real-time fade, independent of sc
    fights the video's own native playback clock on lower-powered GPUs, which
    is what caused the jitter. On mobile the video just fades in on entry,
    plays natively, and the page scrolls past it like normal content. */
+
 export default function VideoSection() {
     const sectionRef = useRef<HTMLElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
@@ -53,7 +54,7 @@ export default function VideoSection() {
                         },
                         onEnterBack: () => {
                             gsap.to(wrap, { opacity: 1, duration: EDGE_FADE_DURATION, ease: 'power1.out' })
-                            video.play().catch(() => {})
+                            video.play().catch(() => { })
                         },
                         onLeave: () => gsap.set(wrap, { opacity: 0 }),
                         onLeaveBack: () => gsap.set(wrap, { opacity: 0 }),
@@ -77,7 +78,7 @@ export default function VideoSection() {
                     scrollTrigger: {
                         trigger: section,
                         start: 'top top',
-                        end: '+=6000', /* tune to taste */
+                        end: '+=1000', /* tune to taste */
                         pin: true,
                         scrub: true, // zero-lag, tied directly to scroll position
                         fastScrollEnd: true,
