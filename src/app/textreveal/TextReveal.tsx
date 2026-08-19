@@ -36,7 +36,7 @@ export default function TextHighlightScroll({
                     style={{
                         fontSize: '1.4rem',
                         color: '#a7a7a7',
-                        fontWeight: 700,
+                        fontWeight: 500,
                         textTransform: 'uppercase',
                         letterSpacing: '0.2rem',
                     }}

@@ -6,6 +6,7 @@ import Preloader from './Preloader';
 import ImageTrail from './imagetrail/ImageTrail';
 import TextHighlightScroll from './textreveal/TextReveal';
 import NavBar from '@/components/system/navbar/NavBar';
+import Link from 'next/link';
 
 
 export const metadata = {
@@ -65,7 +66,7 @@ export default function HomeComponent() {
                 backgroundSrc="/background.webp"
             />
 
-            {/* <div style={{
+            <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -73,27 +74,34 @@ export default function HomeComponent() {
                 background: '#fff',
                 position: 'relative'
             }}>
-                <ImageTrail
-                    items={[
-                        '/elements/1.png',
-                        '/elements/2.png',
-                        '/elements/3.png',
-                        '/elements/4.png',
-                        '/elements/5.png',
-                        '/elements/6.png',
-                        '/elements/7.png',
-                        '/elements/8.png',
-                    ]}
-                    variant={1}
-                />
                 <TextHighlightScroll
                     title="OUR STORY"
                     lines={[
                         'Every piece begins with earth and a story.',
-                        'Founded by a Shantiniketan trained ceramic artist, our studio keeps traditional craftsmanship alive.',
+
+                        'Founded by a Shantiniketan trained ceramic designer, our studio keeps traditional craftsmanship alive.',
                     ]}
                 />
-            </div> */}
+            </div>
+
+            <div className={styles.products}>
+
+                <Link href="/products/prashanta" target='_blank' className={styles.productcontainer}>
+                    <p className={styles.label}>
+                        Jain philosophy inspired work
+                    </p>
+
+                    <img src="/assets/prashanta/one-set.webp" className={styles.productbanner} />
+                </Link>
+
+                <Link href="/products/santhali" target='_blank' className={styles.productcontainer}>
+                    <p className={styles.label}>
+                        Santhali tattoo inspired work
+                    </p>
+
+                    <img src="/assets/santhali/3.webp" className={styles.productbanner} />
+                </Link>
+            </div>
         </div>
     );
 }
